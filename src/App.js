@@ -19,9 +19,10 @@ class App extends Component {
           <Switch>
             <Route path='/' exact />
           </Switch>
+        </Router>
           <Header />
           <Footer />
-        </Router>
+        
       </>
      );
   }
