@@ -1,4 +1,3 @@
-
 import React, {useState} from 'react';
 import { Button } from './ButtonComponents';
 import { Link } from 'react-router-dom';
@@ -33,22 +32,30 @@ function Navbar() {
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className='nav-item'>
                             <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                                Home
+                                Home 
+                                <i className="fa fa-home fa-lg"></i>
+                            </Link>
+                        </li>
+                        <li className='nav-item'>
+                            <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                                About 
                             </Link>
                         </li>
                         <li className='nav-item'>
                             <Link to="/dogs" className="nav-links" onClick={closeMobileMenu}>
-                                Dogs
+                                Dogs 
+                                {/*<img src="assets/images/dogicon3.jpeg" />*/}
                             </Link>
                         </li>
                         <li className='nav-item'>
                             <Link to="/cats" className="nav-links" onClick={closeMobileMenu}>
-                                Cats
+                                Cats 
+                                {/*<img src="/assets/images/catface.jpeg" />*/}
                             </Link>
                         </li>
-                        <li className='nav-item'>
+                        <li className='nav-item-mobile'>
                             <Link to="/login" className="nav-links-mobile" onClick={closeMobileMenu}>
-                                Log in
+                                Log In
                             </Link>
                         </li>
                     </ul>

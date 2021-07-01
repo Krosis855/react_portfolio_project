@@ -14,14 +14,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80px;
+    height: 90px;
     max-width: 1500px;
   }
-  
+  .navbar-logo:hover {
+      color: white;
+      text-decoration: none;
+  }
+
   .navbar-logo {
     color: #fff;
     justify-self: start;
     margin-left: 20px;
+    margin-bottom: 20px;
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
@@ -29,7 +34,7 @@
     align-items: center;
   }
   
-  .fa-angellist {
+  .fa-angellist, .fa-home {
     margin-left: 0.5rem;
     font-size: 1.8rem;
   }
@@ -61,6 +66,8 @@
   .nav-links:hover {
     border-bottom: 4px solid #fff;
     transition: all 0.2s ease-out;
+    color: white;
+    text-decoration: none;
   }
   
   .fa-bars {
@@ -133,6 +140,7 @@
     .fa-times {
       color: #fff;
       font-size: 2rem;
+      padding-left: 10px;
     }
   
     .nav-links-mobile {
@@ -155,4 +163,9 @@
       color: #242424;
       transition: 250ms;
     }
+  }
+
+  img {
+    width: 50px;
+    margin-left: 10px;
   }
