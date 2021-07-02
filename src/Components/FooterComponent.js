@@ -1,13 +1,10 @@
 import React from 'react';
 
-const Footer = () => {
+function Footer() {
     return (
-        <>
-            <div className="footer">
-                <h2>Contact Information:</h2>
-                <p></p>
-            </div>
-        </>
+        <div className="footer-container">
+            
+        </div>
     )
 }
 

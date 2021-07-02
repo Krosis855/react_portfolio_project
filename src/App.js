@@ -30,7 +30,6 @@ class App extends Component {
           <Header />
           <Body />
           <Footer />
-        
       </>
      );
   }
