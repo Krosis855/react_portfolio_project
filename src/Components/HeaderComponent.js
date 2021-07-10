@@ -5,7 +5,7 @@ import './Header.css';
 const Header = () => {
     return (
         <>
-            <img className="heroimage" src="/assets/images/animals.jpeg"/>
+            <img className="heroimage" src="https://www.littlegatepublishing.com/wp-content/uploads/2014/03/Royal-Canin.jpg"/>
         </>
     )
 }
