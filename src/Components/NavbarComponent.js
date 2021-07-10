@@ -23,7 +23,7 @@ function Navbar() {
             <nav className="navbar">
                 <div className="navbar-container">
                     <Link to="/" className="navbar-logo">
-                        Dogs N' Cats
+                        Cats N' Dogs
                         <i class="fa fa-angellist" aria-hidden="true"></i>
                     </Link>
                     <div className="menu-icon" onClick={handleClick}>
