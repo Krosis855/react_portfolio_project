@@ -7,7 +7,7 @@ import { DOGS } from './shared/dogs.js';
 import { CATS } from './shared/cats';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
-import { DogsDirectory } from './Components/DogsComponent.js';
+import { DogsDirectory } from './Components/DogsComponent';
 import { CatsDirectory } from './Components/CatsComponent';
 
 
@@ -31,8 +31,8 @@ class App extends Component {
         </Router>
           <Header />
           <Body />
-          <DogsDirectory />
-          <CatsDirectory />
+          <DogsDirectory dogs={this.state.dogs}/>
+          <CatsDirectory cats={this.state.cats}/>
           <Footer />
       </>
      );
