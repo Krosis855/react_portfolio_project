@@ -8,9 +8,10 @@ import Footer from "./FooterComponent";
 import Navbar from "./NavbarComponent";
 import DogsDirectory from "./DogsComponent";
 import CatsDirectory from "./CatsComponent";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import DogInfo from "./DogInfoComponent";
 import CatInfo from "./CatInfoComponent";
+import Home from './HomeComponent';
 
 class Main extends Component {
   constructor(props) {
@@ -33,20 +34,25 @@ class Main extends Component {
   }
 
   render() {
+    const HomePage = () => {
+      return (
+        <Home />
+      )
+    }
     return (
       <>
         <Router>
           <Navbar />
           <Switch>
-            <Route path="/" exact />
+            <Route path="/home" component={HomePage}/>
+            <Route exact path='/dogs' render={() => <DogsDirectory dogs={this.state.dogs} />} />
+            <Route exact path='/cats' render={() => <CatsDirectory cats={this.state.cats} />} />
+            <Redirect to='/home'/>
           </Switch>
         </Router>
         <Header />
         <Body />
-        <DogsDirectory
-          dogs={this.state.dogs}
-          onClick={(dogId) => this.onDogSelect(dogId)}
-        />
+
         <DogInfo
           dog={
             this.state.dogs.filter(
@@ -54,10 +60,7 @@ class Main extends Component {
             )[0]
           }
         />
-        <CatsDirectory
-          cats={this.state.cats}
-          onClick={(catId) => this.onCatSelect(catId)}
-        />
+
         <CatInfo
           cat={
             this.state.cats.filter(

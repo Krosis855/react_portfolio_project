@@ -6,9 +6,9 @@ import {
   CardTitle,
 } from "reactstrap";
 
-function RenderDogDirectoryItem({dog, onClick}) {
+function RenderDogDirectoryItem({dog}) {
   return (
-    <Card onClick={() => onClick(dog.id)}>
+    <Card>
       <CardImg width="100%" src={dog.image} alt={dog.name} />
       <CardImgOverlay>
         <CardTitle>{dog.name}</CardTitle>

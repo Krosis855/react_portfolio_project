@@ -1,9 +1,9 @@
 import React from "react";
 import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
 
-function RenderCatDirectoryItem({cat, onClick}) {
+function RenderCatDirectoryItem({cat}) {
   return (
-    <Card onClick={() => onClick(cat.id)}>
+    <Card>
       <CardImg width="100%" src={cat.image} alt={cat.name}/>
       <CardImgOverlay>
         <CardTitle>

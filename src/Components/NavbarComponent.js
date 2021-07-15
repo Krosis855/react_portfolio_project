@@ -32,24 +32,23 @@ function Navbar() {
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className='nav-item'>
                             <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                                Home 
-                                <i className="fa fa-home fa-lg"></i>
+                                <i className="fa fa-home fa-lg"></i> Home 
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                                About 
+                            <Link to="/about" className="nav-links" onClick={closeMobileMenu}>
+                            <i className="fa fa-info fa-lg" /> About 
+                            </Link>
+                        </li>
+                        <li className='nav-item'>
+                            <Link to="/cats" className="nav-links" onClick={closeMobileMenu}>
+                                Cats
+                                {/*<img src="assets/images/dogicon3.jpeg" />*/}
                             </Link>
                         </li>
                         <li className='nav-item'>
                             <Link to="/dogs" className="nav-links" onClick={closeMobileMenu}>
                                 Dogs 
-                                {/*<img src="assets/images/dogicon3.jpeg" />*/}
-                            </Link>
-                        </li>
-                        <li className='nav-item'>
-                            <Link to="/cats" className="nav-links" onClick={closeMobileMenu}>
-                                Cats 
                                 {/*<img src="/assets/images/catface.jpeg" />*/}
                             </Link>
                         </li>
