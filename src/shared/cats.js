@@ -6,7 +6,14 @@ export const CATS = [
         breed: "tabby cat",
         gender: "female",
         featured: false,
-        description: "Of wanting to pay my own way. I never asked my parents for money. I preferred to steal from my parents than ask them for money."
+        description: "Of wanting to pay my own way. I never asked my parents for money. I preferred to steal from my parents than ask them for money.",
+        catInfo:  [ {
+            id: 0,
+            breed: "toucan sam",
+            sex: "male",
+            ownerComments: "Good boy!",
+            age: "3",
+        }] 
     },
     {
         id: 1,
@@ -15,7 +22,14 @@ export const CATS = [
         breed: "tabby cat",
         gender: "female",
         featured: true,
-        description: "Oh baby when you talk like that, you make a woman go mad."
+        description: "Oh baby when you talk like that, you make a woman go mad.",
+        catInfo:  [ {
+            id: 0,
+            breed: "toucan sam",
+            sex: "male",
+            ownerComments: "Good boy!",
+            age: "3",
+        }] 
     },
     {
         id: 2,
@@ -24,7 +38,14 @@ export const CATS = [
         breed: "tabby cat",
         gender: "male",
         featured: false,
-        description: "If I’m gonna spend however long it takes to make a movie, give up 14 hours a day for however many weeks or months, then it’s very important for me to know that I’m working with people who I respect and enjoy and that we’re going for something together."
+        description: "If I’m gonna spend however long it takes to make a movie, give up 14 hours a day for however many weeks or months, then it’s very important for me to know that I’m working with people who I respect and enjoy and that we’re going for something together.",
+        catInfo:  [ {
+            id: 0,
+            breed: "toucan sam",
+            sex: "male",
+            ownerComments: "Good boy!",
+            age: "3",
+        }] 
     },
     {
         id: 3,
@@ -33,7 +54,14 @@ export const CATS = [
         breed: "tabby cat",
         gender: "female",
         featured: false,
-        description: "The thing that's funny is that everyone thinks I'm dead."
+        description: "The thing that's funny is that everyone thinks I'm dead.",
+        catInfo:  [ {
+            id: 0,
+            breed: "toucan sam",
+            sex: "male",
+            ownerComments: "Good boy!",
+            age: "3",
+        }] 
     },
     {
         id: 4,
@@ -42,7 +70,14 @@ export const CATS = [
         breed: "tabby cat",
         gender: "female",
         featured: false,
-        description: "Can you save us, Britney Spears? Can we be saved???"
+        description: "Can you save us, Britney Spears? Can we be saved???",
+        catInfo:  [ {
+            id: 0,
+            breed: "toucan sam",
+            sex: "male",
+            ownerComments: "Good boy!",
+            age: "3",
+        }] 
     },
     {
         id: 5,
@@ -51,6 +86,13 @@ export const CATS = [
         breed: "tabby cat",
         gender: "female",
         featured: false,
-        description: "I have a drum set in my dressing room. I play drums to relax and have some fun."
+        description: "I have a drum set in my dressing room. I play drums to relax and have some fun.",
+        catInfo:  [ {
+            id: 0,
+            breed: "toucan sam",
+            sex: "male",
+            ownerComments: "Good boy!",
+            age: "3",
+        }] 
     }
 ];

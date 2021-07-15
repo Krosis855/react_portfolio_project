@@ -4,8 +4,6 @@ import {
   Card,
   CardImg,
   CardImgOverlay,
-  CardText,
-  CardBody,
   CardTitle,
 } from "reactstrap";
 import { DogInfo } from "./DogInfoComponent";
@@ -24,7 +22,7 @@ export class DogsDirectory extends Component {
     const dogsDirectory = this.props.dogs.map((dog) => {
       return (
         <div key={dog.id} className="col-md-5 m-1">
-          <Card onClick={() => this.onDogSelect(dog)}>
+          <Card onClick={() => this.props.onClick(dog.id)}>
             <CardImg width="100%" src={dog.image} alt={dog.name}></CardImg>
             <CardImgOverlay>
               <CardTitle>{dog.name}</CardTitle>
@@ -36,8 +34,9 @@ export class DogsDirectory extends Component {
 
     return (
       <div className="container">
-        <div className="row">{dogsDirectory}</div>
-        <DogInfo dog={this.state.selectedDog} />
+        <div className="row">
+          {dogsDirectory}
+        </div>
       </div>
     );
   }

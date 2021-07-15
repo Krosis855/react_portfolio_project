@@ -9,6 +9,8 @@ import Navbar from "./NavbarComponent";
 import { DogsDirectory } from "./DogsComponent";
 import { CatsDirectory } from "./CatsComponent";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { DogInfo } from "./DogInfoComponent";
+import { CatInfo  } from "./CatInfoComponent";
 
 class Main extends Component {
     constructor(props) {
@@ -22,12 +24,12 @@ class Main extends Component {
         };
     }
 
-    onDogSelect(dog) {
-        this.setState({selectedDog: dog});
+    onDogSelect(dogId) {
+        this.setState({selectedDog: dogId});
       }
 
-    onCatSelect(cat) {
-        this.setState({selectedCat: cat})
+    onCatSelect(catId) {
+        this.setState({selectedCat: catId})
       }
 
       render() {
@@ -41,8 +43,10 @@ class Main extends Component {
               </Router>
               <Header />
               <Body />
-              <DogsDirectory dogs={this.state.dogs} onClick={dog => this.onDogSelect(dog)} />
-              <CatsDirectory cats={this.state.cats} onClick={cat => this.onCatSelect(cat)}/>
+              <DogsDirectory dogs={this.state.dogs} onClick={dogId => this.onDogSelect(dogId)} />
+              <DogInfo dog={this.state.dogs.filter(dog => dog.id === this.state.selectedDog)[0]} />
+              <CatsDirectory cats={this.state.cats} onClick={catId => this.onCatSelect(catId)} />
+              <CatInfo cat={this.state.cats.filter(cat => cat.id === this.state.selectedCat)[0]} />
               <Footer />
             </>
           );
