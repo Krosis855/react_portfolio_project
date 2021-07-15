@@ -1,43 +1,37 @@
-import React, { Component } from "react";
-//import DOGS from "./shared/dogs.js";
+import React from "react";
 import {
   Card,
   CardImg,
   CardImgOverlay,
   CardTitle,
 } from "reactstrap";
-import { DogInfo } from "./DogInfoComponent";
-export class DogsDirectory extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectedDog: null,
-    };
-  }
-  onDogSelect(dog) {
-    this.setState({ selectedDog: dog });
-  }
 
-  render() {
-    const dogsDirectory = this.props.dogs.map((dog) => {
-      return (
-        <div key={dog.id} className="col-md-5 m-1">
-          <Card onClick={() => this.props.onClick(dog.id)}>
-            <CardImg width="100%" src={dog.image} alt={dog.name}></CardImg>
-            <CardImgOverlay>
-              <CardTitle>{dog.name}</CardTitle>
-            </CardImgOverlay>
-          </Card>
-        </div>
-      );
-    });
+function RenderDogDirectoryItem({dog, onClick}) {
+  return (
+    <Card onClick={() => onClick(dog.id)}>
+      <CardImg width="100%" src={dog.image} alt={dog.name} />
+      <CardImgOverlay>
+        <CardTitle>{dog.name}</CardTitle>
+      </CardImgOverlay>
+    </Card>
+  )
+}
 
+function DogsDirectory(props) {
+  const dogsDirectory = props.dogs.map(dog => {
     return (
-      <div className="container">
-        <div className="row">
-          {dogsDirectory}
-        </div>
+      <div key={dog.id} className="col-md-5 m-1">
+        <RenderDogDirectoryItem dog={dog} onClick={props.onClick} />
       </div>
     );
-  }
+  });
+  return (
+    <div className="container">
+      <div className="row">
+        {dogsDirectory}
+      </div>
+    </div>
+  )
 }
+
+export default DogsDirectory;

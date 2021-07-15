@@ -1,42 +1,37 @@
-import React, { Component } from "react";
-//import DOGS from "./shared/dogs.js";
-import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
-import { CatInfo } from "./CatInfoComponent";
+import React from "react";
+import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
 
-export class CatsDirectory extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectedCat: null,
-    };
-  }
-
-onCatSelect(cat) {
-  this.setState({selectedCat: cat})
+function RenderCatDirectoryItem({cat, onClick}) {
+  return (
+    <Card onClick={() => onClick(cat.id)}>
+      <CardImg width="100%" src={cat.image} alt={cat.name}/>
+      <CardImgOverlay>
+        <CardTitle>
+          {cat.name}
+        </CardTitle>
+      </CardImgOverlay>
+    </Card>
+  )
 }
 
-  render() {
-    const catsDirectory = this.props.cats.map((cat) => {
-      return (
-        <div key={cat.id} className="col-md-5 m-1">
-          <Card onClick={() => this.props.onClick(cat.id)}>
-            <CardImg width="100%" src={cat.image} alt={cat.name}></CardImg>
-            <CardImgOverlay>
-              <CardTitle>{cat.name}</CardTitle>
-            </CardImgOverlay>
-          </Card>
-        </div>
-      );
-    });
-
+function CatsDirectory(props) {
+  const catsDirectory = props.cats.map(cat => {
     return (
-      <div className="container">
-        <div className="row">
-          {catsDirectory}
-        </div>
+      <div key={cat.id} className="col-md-5 m-1">
+        <RenderCatDirectoryItem cat={cat} onClick={props.onClick} />
       </div>
     );
-  }
+  });
+  return (
+    <div className="container">
+      <div className="row">
+        {catsDirectory}
+      </div>
+    </div>
+  )
 }
+
+export default CatsDirectory;
+
 
 
