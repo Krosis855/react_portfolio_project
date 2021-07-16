@@ -1,10 +1,9 @@
 import React from 'react';
-import { Card, CardBody, CardText } from 'reactstrap';
 
 const Body = () => {
     return ( 
         <>
-            <h1>Featured Animals:</h1>
+            <h4>Featured Animals:</h4>
         </>
      );
 }

@@ -3,7 +3,7 @@ import { DOGS } from "../shared/dogs.js";
 import { DOGINFORMATION } from "../shared/doginfo";
 import React, { Component } from "react";
 import Body from "./BodyComponent";
-import Header from "./HeaderComponent";
+
 import Footer from "./FooterComponent";
 import Navbar from "./NavbarComponent";
 import DogsDirectory from "./DogsComponent";
@@ -36,13 +36,17 @@ class Main extends Component {
   render() {
     const HomePage = () => {
       return (
-        <Home />
+        <Home
+          dog={this.state.dogs.filter(dog => dog.featured)[0]}
+          cat={this.state.cats.filter(cat => cat.featured)[0]}
+        />
       )
     }
     return (
       <>
         <Router>
           <Navbar />
+          
           <Switch>
             <Route path="/home" component={HomePage}/>
             <Route exact path='/dogs' render={() => <DogsDirectory dogs={this.state.dogs} />} />
@@ -50,8 +54,8 @@ class Main extends Component {
             <Redirect to='/home'/>
           </Switch>
         </Router>
-        <Header />
-        <Body />
+        
+        
 
         <DogInfo
           dog={
